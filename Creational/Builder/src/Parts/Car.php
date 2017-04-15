@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Creational\Builder\Parts;
 
-class Car
+class Car extends Vehicle
 {
 
 }
