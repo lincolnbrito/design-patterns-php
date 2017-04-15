@@ -3,14 +3,18 @@
 namespace DesignPatterns\Creational\Builder;
 
 
+use DesignPatterns\Creational\Builder\Parts\Engine;
+use DesignPatterns\Creational\Builder\Parts\Truck;
 use DesignPatterns\Creational\Builder\Parts\Vehicle;
 
 class TruckBuilder implements BuilderInterface
 {
 
+    private $truck;
+
     public function createVehicle()
     {
-        // TODO: Implement createVehicle() method.
+        $this->truck = new Truck();
     }
 
     public function addWheel()
@@ -20,7 +24,7 @@ class TruckBuilder implements BuilderInterface
 
     public function addEngine()
     {
-        // TODO: Implement addEngine() method.
+        $this->truck->setPart('truckEngine', new Engine());
     }
 
     public function addDoors()
@@ -30,6 +34,6 @@ class TruckBuilder implements BuilderInterface
 
     public function getVehicle(): Vehicle
     {
-        // TODO: Implement getVehicle() method.
+        return $this->truck;
     }
 }

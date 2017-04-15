@@ -17,4 +17,13 @@ abstract class Vehicle
     {
         $this->data[$key] = $value;
     }
+
+    /**
+     * @param $key
+     * @return bool|object
+     */
+    public function getPart($key)
+    {
+        return $this->data[$key] ?? null;
+    }
 }
