@@ -7,16 +7,16 @@ use DesignPatterns\Creational\Builder\Parts\Engine;
 use DesignPatterns\Creational\Builder\Parts\Wheel;
 use PHPUnit\Framework\TestCase;
 
-class TruckBuilderTest extends TestCase
+class CarBuilderTest extends TestCase
 {
     /**
-     * @var TruckBuilder
+     * @var CarBuilder
      */
     private $builder;
 
     public function setUp()
     {
-        $this->builder = new TruckBuilder();
+        $this->builder = new CarBuilder();
         $this->builder->createVehicle();
     }
 
@@ -24,7 +24,7 @@ class TruckBuilderTest extends TestCase
     {
         $this->builder->addEngine();
 
-        $this->assertInstanceOf(Engine::class, $this->builder->getVehicle()->getPart('truckEngine'));
+        $this->assertInstanceOf(Engine::class, $this->builder->getVehicle()->getPart('engine'));
     }
 
     public function testCanAddDoors()
@@ -33,6 +33,7 @@ class TruckBuilderTest extends TestCase
 
         $this->assertInstanceOf(Door::class, $this->builder->getVehicle()->getPart('rightDoor'));
         $this->assertInstanceOf(Door::class, $this->builder->getVehicle()->getPart('leftDoor'));
+        $this->assertInstanceOf(Door::class, $this->builder->getVehicle()->getPart('trunkLid'));
     }
 
     public function testCanAddWheels()
