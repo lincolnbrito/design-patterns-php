@@ -7,6 +7,7 @@ use DesignPatterns\Creational\Builder\Parts\Door;
 use DesignPatterns\Creational\Builder\Parts\Engine;
 use DesignPatterns\Creational\Builder\Parts\Truck;
 use DesignPatterns\Creational\Builder\Parts\Vehicle;
+use DesignPatterns\Creational\Builder\Parts\Wheel;
 
 class TruckBuilder implements BuilderInterface
 {
@@ -20,9 +21,12 @@ class TruckBuilder implements BuilderInterface
         $this->truck = new Truck();
     }
 
-    public function addWheel()
+    public function addWheels()
     {
-        // TODO: Implement addWheel() method.
+        $this->truck->setPart('wheelLF', new Wheel());
+        $this->truck->setPart('wheelRF', new Wheel());
+        $this->truck->setPart('wheelLR', new Wheel());
+        $this->truck->setPart('wheelRR', new Wheel());
     }
 
     public function addEngine()

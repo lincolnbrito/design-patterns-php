@@ -19,7 +19,7 @@ class Director
         $builder->createVehicle();
         $builder->addDoors();
         $builder->addEngine();
-        $builder->addWheel();
+        $builder->addWheels();
 
         return $builder->getVehicle();
     }
