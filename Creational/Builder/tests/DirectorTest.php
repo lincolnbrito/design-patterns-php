@@ -9,7 +9,7 @@ class DirectorTest extends TestCase
 
     public function testCanBuildTruck()
     {
-        $trackBuilder = new TrackBuilder();
+        $trackBuilder = new TruckBuilder();
 
     }
 
