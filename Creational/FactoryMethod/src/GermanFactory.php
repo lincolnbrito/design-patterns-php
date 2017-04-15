@@ -16,7 +16,7 @@ class GermanFactory extends FactoryMethod
 
                 return $carMercedes;
             default:
-                throw new \InvalidArgumentException("$type is not a valide vehicle");
+                throw new \InvalidArgumentException("$type is not a valid vehicle");
         }
     }
 }
